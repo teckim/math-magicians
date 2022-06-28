@@ -48,6 +48,4 @@ const Calculator = () => {
   );
 };
 
-// eslint-disable-next-line react/prefer-stateless-function
-
 export default Calculator;
