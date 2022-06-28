@@ -1,0 +1,42 @@
+$row_height: 48px;
+$primary-color: #f5913e;
+$secondary-color: #e0e0e0;
+
+.calculator {
+  width: 360px;
+
+  &__input {
+    width: 100%;
+    height: $row_height;
+    text-align: right;
+    color: #fff;
+
+    &-wrapper {
+      padding: 0 8px;
+      background-color: #858693;
+    }
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__btn {
+    height: $row_height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    background-color: $secondary-color;
+    border: 1px solid #d1d1d2;
+
+    &--primary {
+      background-color: $primary-color;
+    }
+
+    &--span {
+      grid-column: 1 / 3;
+    }
+  }
+}
