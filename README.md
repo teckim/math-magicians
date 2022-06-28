@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Todo List Project
+# Math Magicians Project
 
 > In this React web application, users can use the calculator feature, and see some quotes.
 
@@ -44,3 +44,7 @@ run `npm run start`.
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
