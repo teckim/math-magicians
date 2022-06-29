@@ -1,6 +1,35 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import calculate from '../../logic/calculate';
+
 import './style.scss';
+
+const BUTTONS = ['AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
+
+const Button = ({
+  value, isPrimary, onClick,
+}) => {
+  const classNames = [
+    'calculator__btn',
+    isPrimary && 'calculator__btn--primary',
+    value === '0' && 'calculator__btn--span',
+  ]
+    .filter((v) => !!v)
+    .join(' ');
+
+  return <button className={classNames} onClick={onClick} type="button" value={value}>{value}</button>;
+};
+
+Button.propTypes = {
+  value: PropTypes.string.isRequired,
+  isPrimary: PropTypes.bool,
+  onClick: PropTypes.func,
+};
+
+Button.defaultProps = {
+  isPrimary: false,
+  onClick: () => {},
+};
 
 const Calculator = () => {
   const [state, setState] = useState({ total: 0, next: 0 });
@@ -24,25 +53,20 @@ const Calculator = () => {
         <input className="calculator__input" name="equation" disabled onChange={handleInputChange} value={state.next || state.total || 0} />
       </div>
       <div className="calculator__actions">
-        <button className="calculator__btn" onClick={handleClick} type="button" value="AC">AC</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value="+/-">+/-</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value="%">%</button>
-        <button className="calculator__btn calculator__btn--primary" onClick={handleClick} type="button" value="÷">÷</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value="7">7</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value="8">8</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value="9">9</button>
-        <button className="calculator__btn calculator__btn--primary" onClick={handleClick} type="button" value="x">x</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value="4">4</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value="5">5</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value="6">6</button>
-        <button className="calculator__btn calculator__btn--primary" onClick={handleClick} type="button" value="-">-</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value="1">1</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value="2">2</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value="3">3</button>
-        <button className="calculator__btn calculator__btn--primary" onClick={handleClick} type="button" value="+">+</button>
-        <button className="calculator__btn calculator__btn--span" onClick={handleClick} type="button" value="0">0</button>
-        <button className="calculator__btn" onClick={handleClick} type="button" value=".">.</button>
-        <button className="calculator__btn calculator__btn--primary" onClick={handleClick} type="button" value="=">=</button>
+        {
+          BUTTONS.map((button, index) => {
+            const isPrimary = (index + 1) % 4 === 0 || index === 18;
+
+            return (
+              <Button
+                key={button}
+                value={button}
+                isPrimary={isPrimary}
+                onClick={handleClick}
+              />
+            );
+          })
+        }
       </div>
     </div>
   );
