@@ -1,6 +1,6 @@
 .quote {
   min-height: 500px;
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -18,15 +18,16 @@
       left: -4px;
       top: -18px;
       font-size: 40px;
-      font-family: cursive
+      font-family: cursive;
     }
+
     &::after {
       content: "”";
       position: absolute;
       right: 0;
       bottom: -32px;
       font-size: 40px;
-      font-family: cursive
+      font-family: cursive;
     }
   }
 }
