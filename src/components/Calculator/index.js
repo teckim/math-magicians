@@ -50,7 +50,7 @@ const Calculator = () => {
   return (
     <div className="calculator">
       <div className="calculator__input-wrapper">
-        <input className="calculator__input" name="equation" disabled onChange={handleInputChange} value={state.next || state.total || 0} />
+        <input data-testid="testingInput" className="calculator__input" name="equation" disabled onChange={handleInputChange} value={state.next || state.total || 0} />
       </div>
       <div className="calculator__actions">
         {
