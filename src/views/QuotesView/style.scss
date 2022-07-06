@@ -1,0 +1,32 @@
+.quote {
+  min-height: 500px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+    position: relative;
+    max-width: 500px;
+    padding: 0 12px;
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+
+    &::before {
+      content: "“";
+      position: absolute;
+      left: -4px;
+      top: -18px;
+      font-size: 40px;
+      font-family: cursive
+    }
+    &::after {
+      content: "”";
+      position: absolute;
+      right: 0;
+      bottom: -32px;
+      font-size: 40px;
+      font-family: cursive
+    }
+  }
+}
