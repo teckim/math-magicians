@@ -13,9 +13,10 @@
 - ES Modules
 - Linters
 
-## Live Demo
+## Live Demos
 
-[Live Demo Link](https://teckim.github.io/math-magicians)
+[Netlify](https://main--sparkling-unicorn-8ccaee.netlify.app/)
+[Heroku](https://math-magicians-teckim.herokuapp.com/)
 
 
 ## Getting Started
