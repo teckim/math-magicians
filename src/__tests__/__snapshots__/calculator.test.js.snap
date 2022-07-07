@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`testing math magician renders correctly 1`] = `
+exports[`calculator component should render correctly 1`] = `
 <div
   className="calculator"
 >
@@ -9,7 +9,7 @@ exports[`testing math magician renders correctly 1`] = `
   >
     <input
       className="calculator__input"
-      data-testid="testingInput"
+      data-testid="calculator-input"
       disabled={true}
       name="equation"
       onChange={[Function]}
