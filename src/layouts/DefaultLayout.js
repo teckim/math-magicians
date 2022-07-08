@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 
 const DefaultLayout = ({ children }) => (
   <>
-    <header className="container">
+    <header>
       <Navbar />
     </header>
     <main>
